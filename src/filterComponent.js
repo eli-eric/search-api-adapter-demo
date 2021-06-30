@@ -33,6 +33,7 @@ const Filter = ({obj}) => (
         step={(obj.range[1] - obj.range[0]) / 100}
         defaultValue={obj.range}
         onChange={obj.assocValue}
+        key={obj.unit}
       />
     )}
     {['gt', 'gte', 'lt', 'lte'].includes(obj?.operator) && (
@@ -41,6 +42,7 @@ const Filter = ({obj}) => (
         max={obj.range[1]}
         step={(obj.range[1] - obj.range[0]) / 100}
         onChange={obj.assocValue}
+        key={obj.unit}
       />
     )}
     {['ilike', 'nilike', 'like', 'nlike', 'regexp', 'eq', 'neq'].includes(
