@@ -7,12 +7,7 @@ const SearchApiResult = () => {
   const ENDPOINT = 'https://federated.scicat.ess.eu/api/Documents'
   // const ENDPOINT = 'http://localhost:5000/api/Documents'
   const filters = useFilterState()
-  const query = translate(filters, {
-    include: [
-      ['datasets', 'parameters'],
-      ['datasets', 'techniques'],
-    ],
-  })
+  const query = translate(filters)
   const setQuery = useQuery((state) => state.setQuery)
   const [data, setData] = useState([])
   console.log(data)
